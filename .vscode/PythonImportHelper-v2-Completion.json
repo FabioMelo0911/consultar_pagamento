@@ -1,0 +1,147 @@
+[
+    {
+        "label": "openpyxl",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "openpyxl",
+        "description": "openpyxl",
+        "detail": "openpyxl",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "sleep",
+        "importPath": "time",
+        "description": "time",
+        "isExtraImport": true,
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "sleep",
+        "importPath": "time",
+        "description": "time",
+        "isExtraImport": true,
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "WebDriverWait",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "expected_conditions",
+        "importPath": "selenium.webdriver.support",
+        "description": "selenium.webdriver.support",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support",
+        "documentation": {}
+    },
+    {
+        "label": "planilha_clientes",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "planilha_clientes = openpyxl.load_workbook('dados_clientes.xlsx')\npagina_clientes = planilha_clientes['Sheet1']\n# Criar uma nova planilha para salvar os resultados\nnova_planilha = openpyxl.Workbook()\npagina_resultados = nova_planilha.active\npagina_resultados.title = 'Resultados'\npagina_resultados.append(['Nome', 'Valor', 'CPF', 'Vencimento', 'Status', 'Data de Pagamento', 'Método de Pagamento'])\n# Entrar na página do site para pesquisar o status do pagamento\ndriver = webdriver.Chrome()\ndriver.get('https://consultcpf-devaprender.netlify.app/')",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "pagina_clientes",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "pagina_clientes = planilha_clientes['Sheet1']\n# Criar uma nova planilha para salvar os resultados\nnova_planilha = openpyxl.Workbook()\npagina_resultados = nova_planilha.active\npagina_resultados.title = 'Resultados'\npagina_resultados.append(['Nome', 'Valor', 'CPF', 'Vencimento', 'Status', 'Data de Pagamento', 'Método de Pagamento'])\n# Entrar na página do site para pesquisar o status do pagamento\ndriver = webdriver.Chrome()\ndriver.get('https://consultcpf-devaprender.netlify.app/')\n# Iterar sobre os clientes",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "nova_planilha",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "nova_planilha = openpyxl.Workbook()\npagina_resultados = nova_planilha.active\npagina_resultados.title = 'Resultados'\npagina_resultados.append(['Nome', 'Valor', 'CPF', 'Vencimento', 'Status', 'Data de Pagamento', 'Método de Pagamento'])\n# Entrar na página do site para pesquisar o status do pagamento\ndriver = webdriver.Chrome()\ndriver.get('https://consultcpf-devaprender.netlify.app/')\n# Iterar sobre os clientes\nfor linha in pagina_clientes.iter_rows(min_row=2, values_only=True):\n    nome, valor, cpf, vencimento = linha",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "pagina_resultados",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "pagina_resultados = nova_planilha.active\npagina_resultados.title = 'Resultados'\npagina_resultados.append(['Nome', 'Valor', 'CPF', 'Vencimento', 'Status', 'Data de Pagamento', 'Método de Pagamento'])\n# Entrar na página do site para pesquisar o status do pagamento\ndriver = webdriver.Chrome()\ndriver.get('https://consultcpf-devaprender.netlify.app/')\n# Iterar sobre os clientes\nfor linha in pagina_clientes.iter_rows(min_row=2, values_only=True):\n    nome, valor, cpf, vencimento = linha\n    sleep(5)  # Esperar a página carregar completamente",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "pagina_resultados.title",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "pagina_resultados.title = 'Resultados'\npagina_resultados.append(['Nome', 'Valor', 'CPF', 'Vencimento', 'Status', 'Data de Pagamento', 'Método de Pagamento'])\n# Entrar na página do site para pesquisar o status do pagamento\ndriver = webdriver.Chrome()\ndriver.get('https://consultcpf-devaprender.netlify.app/')\n# Iterar sobre os clientes\nfor linha in pagina_clientes.iter_rows(min_row=2, values_only=True):\n    nome, valor, cpf, vencimento = linha\n    sleep(5)  # Esperar a página carregar completamente\n    # Pesquisar o CPF",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "driver",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "driver = webdriver.Chrome()\ndriver.get('https://consultcpf-devaprender.netlify.app/')\n# Iterar sobre os clientes\nfor linha in pagina_clientes.iter_rows(min_row=2, values_only=True):\n    nome, valor, cpf, vencimento = linha\n    sleep(5)  # Esperar a página carregar completamente\n    # Pesquisar o CPF\n    campo_pesquisa = driver.find_element(By.XPATH, '//input[@id=\"cpfInput\"]')\n    sleep(1)\n    campo_pesquisa.send_keys(cpf)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "planilha_clientes",
+        "kind": 5,
+        "importPath": "tempCodeRunnerFile",
+        "description": "tempCodeRunnerFile",
+        "peekOfCode": "planilha_clientes = openpyxl.load_workbook('dados_clientes.xlsx')\n# Selecionar a aba com os dados dos clientes\npagina_clientes = ['Sheet1']\n# Iterar sobre os clientes\nfor linha in pagina_clientes.iter_rows(min_row=2, values_only=True):\n    nome, valor, cpf, vencimento = linha\n    # Entrar na página do site para pesquisar o status do pagamento\n    driver = webdriver.Chrome()\n    driver.get('https://consultcpf-devaprender.netlify.app/')\n    sleep(5)",
+        "detail": "tempCodeRunnerFile",
+        "documentation": {}
+    },
+    {
+        "label": "pagina_clientes",
+        "kind": 5,
+        "importPath": "tempCodeRunnerFile",
+        "description": "tempCodeRunnerFile",
+        "peekOfCode": "pagina_clientes = ['Sheet1']\n# Iterar sobre os clientes\nfor linha in pagina_clientes.iter_rows(min_row=2, values_only=True):\n    nome, valor, cpf, vencimento = linha\n    # Entrar na página do site para pesquisar o status do pagamento\n    driver = webdriver.Chrome()\n    driver.get('https://consultcpf-devaprender.netlify.app/')\n    sleep(5)",
+        "detail": "tempCodeRunnerFile",
+        "documentation": {}
+    }
+]

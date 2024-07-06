@@ -1,0 +1,2 @@
+XPATH
+//tag[@atributo='valor']

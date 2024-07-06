@@ -1,0 +1,9 @@
+1 - Entrar na planilha e extrair o CPF do cliente
+2 - Entrar no site https://consultcpf-devaprender.netlify.app/
+o CPF da planilha para pesquisar o status do pagamento daquele cliente
+
+3 - Verificar se está 'em dia' ou 'atrasado'
+4- Se estiver 'em dia', pegar a data do pagamento e o metodo de pagamento
+5 - Caso contrario (se estiver atrasado), colocar o status como pendente
+6 - Inserir essas novas informaçoes(nome, valor, cpf, vencimento, status e caso enteja 'em dia', data do pagamento, metodo de pagamento(cartao, boleto) em uma nova planilha
+7 - Repetir até chegar no ultimo cliente

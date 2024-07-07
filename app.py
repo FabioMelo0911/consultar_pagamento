@@ -34,6 +34,7 @@ for linha in pagina_clientes.iter_rows(min_row=2, values_only=True):
     # Pesquisar o CPF
     campo_pesquisa = driver.find_element(By.XPATH, '//input[@id="cpfInput"]')
     sleep(1)
+    campo_pesquisa.clear()
     campo_pesquisa.send_keys(cpf)
     sleep(1)
     
@@ -48,10 +49,17 @@ for linha in pagina_clientes.iter_rows(min_row=2, values_only=True):
     if status.text == 'Em dia':
         data_pagamento = driver.find_element(By.XPATH,'//p[@id="paymentDate"]')
         metodo_pagamento = driver.find_element(By.XPATH,'//p[@id="paymentMethod"]')
-        pagina_fechamento.append([nome, valor, cpf, vencimento, 'em dia', 'xxx','xxx' ])    
+
+        data_pagamento_limpo = data_pagamento.text.split()[3]
+        metodo_pagamento_limpo = metodo_pagamento.text.split()[3]
+        planilha_fechamento = openpyxl.load_workbook('planilha fechamento.xlsx')
+        pagina_fechamento.append([nome, valor, cpf, vencimento, 'em dia', data_pagamento_limpo, metodo_pagamento_limpo ])
+
+        planilha_fechamento.save('planilha fechamento.xlsx')
     else:
         # Inserir essas novas informaçoes na nova planilha
         planilha_fechamento = openpyxl.load_workbook('planilha fechamento.xlsx')
         pagina_fechamento = planilha_fechamento['Sheet1']
 
         pagina_fechamento.append([nome, valor, cpf, vencimento, 'pendente'])
+        planilha_fechamento.save('planilha fechamento.xlsx')
